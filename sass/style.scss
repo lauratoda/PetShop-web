@@ -1,0 +1,318 @@
+@import "variables.scss";
+@import "mixin.scss";
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+    header{
+        div.header1{           
+            display: none;
+            
+        }
+        div.header2{
+            display: flex;
+            justify-content: space-between;
+            padding: 18px 52px;
+            background-color: $bg-sec;
+            i{
+                color: $color;
+                font-size: 20px;
+            }
+        }
+    }
+    main{
+        section.primera{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 143px 54px 70px 173px;
+            background-image: url(../img/background.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 440px;
+            h3{ 
+                grid-column: 2/3; 
+                grid-row: 2/3;  
+                font-family: 'Roboto';
+                font-weight: 400;
+                font-size: 25px;
+                line-height: 29px;
+                text-align: center;
+                background-color: $color;
+                padding: 13px 13px;
+                border-radius: 5px;
+                width: 350px;
+                height: 54px;
+                color: $bg-primary;               
+            }
+            h5{
+                grid-column: 2/3;
+                grid-row: 3/4;
+                justify-self: end;
+                align-self: center;   
+                font-family: 'Roboto';
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 19px;
+                text-align: center;
+                color: $bg-primary;              
+            }
+            button{
+                grid-column: 2/3;
+                grid-row: 4/5;
+                justify-self: end;
+                padding: 15px 23px;
+                background-color: $bg-sec;
+                color: $color;
+                font-family: 'Roboto';
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 19px;
+                text-align: center; 
+                border-radius: 5px; 
+                border: none; 
+                width:141px; 
+                height:49px;         
+            }
+        }
+        section.segunda{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            i{
+                color:$bg-sec;
+                font-size: 70px;
+                text-align: center;
+               padding: 20px;
+            }
+            h2{               
+                text-align: center;
+                font-family: 'Roboto';
+                font-weight: 700;
+                font-size: 40px;
+                line-height: 47px;
+                color: $bg-primary;
+                width: 50%;
+                padding-bottom: 25px;
+            }
+            p{
+                font-family: 'Roboto';
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 18px;
+                color: #666666;
+            }
+            div{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 15 px;
+                margin: 20px;
+            }
+        }
+        section.tercera{
+            div.contacto{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                h2{
+                    font-family: 'Roboto';
+                    font-weight: 700;
+                    font-size: 40px;
+                    line-height: 47px;
+                    color: $bg-primary;
+                    padding: 25px;
+                }
+                input{
+                    @include inputtype ($bg-primary, 298px)
+                }
+            }  
+            div.buttons{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+                button{
+                    &.reset{
+                        @include bigbutton ($bg-primary);
+                    }
+                    &.send{
+                        @include bigbutton ($bg-sec);
+                    }
+                }
+            }          
+            
+        }
+        section.cuarta{
+            background-color: $bg-sec;
+            div.suscripcion{
+                display: flex;                
+                align-items: center;
+                img{
+                    width: 37px;
+                    height: 37px;
+                    margin: 15px;
+                }
+                h3{
+                    font-family: 'Roboto';
+                    font-weight: 700;
+                    font-size: 20px;
+                    line-height: 23px;
+                    color:$color;
+                }
+            }
+            div.registro{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                padding-bottom: 20px;
+                input{
+                    @include inputtype ($color, 261px);
+                }
+                button{
+                    width: 100px;
+                    height: 35px;
+                    background:$bg-primary;
+                    border-radius: 15px;
+                    border: none;
+                    color: $color;
+                    font-family: 'Roboto';
+                    font-weight: 700;
+                    font-size: 15px;
+                    line-height: 18px;
+                    margin: 15px;
+                }
+            }
+        }
+    }
+    footer{
+        background-color: $bg-primary;        
+        div.logopie{
+             display: flex;
+             justify-content: center;
+             padding-top:30px;
+        }        
+        div.contactus{
+            background-color: $bg-primary;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            div.localidad, div.telefono, div.email {
+                @include divscontacto;
+                margin: 12px;
+                width: 300px;
+                img{
+                    width: 45px;
+                    height: 45px;
+                }                
+            }
+        }
+        p.contacto{
+                @include contacto;
+                }
+        p{
+                @include respuesta;
+                }
+        }
+        div.derechos{
+            padding: 5px;
+            background-color: black;
+            text-align: center;        
+            p{
+                color:$color;
+                font-family: 'Roboto';
+                font-weight: 700;
+                font-size: 13px;
+                line-height: 15px;
+            }
+        }
+
+@media (min-width:769px){
+    header{
+        div.header1{
+            display: flex;
+            justify-content: space-between;
+            background-color: black;
+            p{
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 10px;
+                line-height: 12px;
+                color:$color;
+                padding: 5px 90px;
+            }
+            div.opciones{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding-right: 90px;
+                div.menu{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0px 10px;
+                    p{
+                        padding: 5px;
+                    }
+                    i{
+                        color:$color;
+                        font-size: 8px;
+                    }
+                }
+            }
+        }
+        div.header2{
+            i{
+                display: none;
+            }
+        }
+    }
+    main{
+        section.primera{
+            h3, h5, button{
+                grid-column: 3/4;
+                justify-self: center;
+            }
+        }
+        section.segunda{
+            div.productos{
+                flex-direction: row;
+                div{
+                    background-color: $bg-prod;
+                    padding: 10px;
+                }
+            }
+        }
+        section.cuarta{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            div.suscripcion{
+                display: flex;                
+                align-items: center;
+                justify-content: flex-start;
+                }
+            div.registro{
+                    padding-bottom: 0px;
+            }
+        }
+    } 
+    footer{
+        div.footerppal{
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-around;
+            align-items: center;
+        }
+    }
+}    
+    
+    

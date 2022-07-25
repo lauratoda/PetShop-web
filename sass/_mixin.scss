@@ -1,0 +1,45 @@
+@mixin bigbutton ($background-color){
+    background-color: $background-color;
+    color:$color;
+    width: 199px;
+    height: 45px;
+    border-radius: 25px;
+    border: none;
+    margin: 5px;
+}
+
+@mixin inputtype ($background-color, $w){
+    background-color: $background-color;
+    border-radius: 15px;
+    border:none;
+    width:$w;
+    height: 40px;
+    padding: 10px;
+    margin: 5px;
+}
+
+@mixin contacto{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color:$color;
+    padding-left: 15px;
+}
+
+@mixin respuesta{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 15px;
+    color: $bg-thrd; 
+    padding-left: 15px;
+
+}
+
+@mixin divscontacto{
+    display: flex;
+    align-items: center;
+}
